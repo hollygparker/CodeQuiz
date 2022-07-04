@@ -10,6 +10,27 @@
 // * REFERENCE THIRD PARTY APIS #5 FOR QUESTION ANSWER OPTIONS
 // ---------------------------------------------------------------------
 
+var questionsContainer = document.getElementbyId("questions")
+var = document.getElementbyId("qTitle")
+var = document.getElementbyId("options")
+var = document.getElementbyId("optA")
+var = document.getElementbyId("optB")
+var = document.getElementbyId("optC")
+var = document.getElementbyId("optD")
+var = document.getElementbyId("seconds")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+var = document.getElementbyId("")
+
 // * THEN a timer starts and I am presented with a question
 // ? Will need two functions - one for timer, one for presenting question
 // todo function for question
