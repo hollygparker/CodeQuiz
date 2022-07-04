@@ -39,35 +39,35 @@ var = document.getElementbyId("")
 // todo create an array of objects for each question and the set of answers, and the correct answer
 
 var questionsContainer = [{
-    question = "Which of the following options contains both of the data types that JavaScripts accepts?"
-    optionA = "letter & string"
-    optionB = "thread & number"
-    optionC = "digit & string"
-    optionD = "string & number"
+    question = "Which of the following options contains both of the data types that JavaScripts accepts?",
+    optionA = "letter & string",
+    optionB = "thread & number",
+    optionC = "digit & string",
+    optionD = "string & number",
     answer = "string & number"
 },
 {
-    question = "What is another way of saying to call a function?"
-    optionA = "provoke"
-    optionB = "invoke"
-    optionC = "artichoke"
-    optionD = "baroque"
+    question = "What is another way of saying to call a function?",
+    optionA = "provoke",
+    optionB = "invoke",
+    optionC = "artichoke",
+    optionD = "baroque",
     answer = "invoke"
 },
 {
-    question = "What does DOM stand for?"
-    optionA = "Directory of Machines"
-    optionB = "Digitally Oriented Moms"
-    optionC = "Document Object Model"
-    optionD = "Developers on Mars"
+    question = "What does DOM stand for?",
+    optionA = "Directory of Machines",
+    optionB = "Digitally Oriented Moms",
+    optionC = "Document Object Model",
+    optionD = "Developers on Mars",
     answer = "Document Object Model"
 },
 {
-    question = "How would you pull 'Sagittarius' from the following array? var signs = ['Sagittarius', 'Leo', 'Capricorn']"
-    optionA = "signs(1)"
-    optionB = "signs[1]"
-    optionC = "signs(0)"
-    optionD = "signs[0]"
+    question = "How would you pull 'Sagittarius' from the following array? var signs = ['Sagittarius', 'Leo', 'Capricorn']",
+    optionA = "signs(1)",
+    optionB = "signs[1]",
+    optionC = "signs(0)",
+    optionD = "signs[0]",
     answer = "signs[0]"
 }
 ]
