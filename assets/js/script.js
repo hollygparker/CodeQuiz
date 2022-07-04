@@ -34,7 +34,43 @@ var = document.getElementbyId("")
 // * THEN a timer starts and I am presented with a question
 // ? Will need two functions - one for timer, one for presenting question
 // todo function for question
-// todo create objects for each question and the set of answers, and the correct answer
+
+
+// todo create an array of objects for each question and the set of answers, and the correct answer
+
+var questionsContainer = [{
+    question = ""
+    optionA = ""
+    optionB = ""
+    optionC = ""
+    optionD = ""
+    answer = ""
+},
+{
+    question = ""
+    optionA = ""
+    optionB = ""
+    optionC = ""
+    optionD = ""
+    answer = ""
+},
+{
+    question = ""
+    optionA = ""
+    optionB = ""
+    optionC = ""
+    optionD = ""
+    answer = ""
+},
+{
+    question = ""
+    optionA = ""
+    optionB = ""
+    optionC = ""
+    optionD = ""
+    answer = ""
+}
+]
 // todo call questions based on index - first question would be question[0], then question[1], and so on.
 // todo when question[0] is in a visible state, the remainder of the questions need to be in a hidden state, and vice versa for all questions
 
