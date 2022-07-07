@@ -20,7 +20,7 @@ var optD = document.getElementById("optD")
 var seconds = document.getElementById("seconds")
 var begin = document.getElementById("begin")
 var beginButton = document.getElementById("beginButton")
-// var = document.getElementById("")
+var answer = document.getElementById("answer")
 // var = document.getElementById("")
 // var = document.getElementById("")
 // var = document.getElementById("")
@@ -109,12 +109,21 @@ function startQuiz() {
         optC.textContent = questionsContainer[questionsContainerArr].optionC;
         optD.textContent = questionsContainer[questionsContainerArr].optionD;
 
-        optionA.addEventListener('click', checkAnswerChoice)
-        optionB.addEventListener('click', checkAnswerChoice)
-        optionC.addEventListener('click', checkAnswerChoice)
-        optionD.addEventListener('click', checkAnswerChoice)
+        optA.addEventListener('click', checkAnswerChoice)
+        optB.addEventListener('click', checkAnswerChoice)
+        optC.addEventListener('click', checkAnswerChoice)
+        optD.addEventListener('click', checkAnswerChoice)
     }
-
+    
+    function checkAnswerChoice(event) {
+        var correctAnswer = [questionsContainerArr].answer
+        console.log(correctAnswer)
+        if (event.target.textContent === correctAnswer) {
+            answer.textContent = "Correct!"
+        } else {
+            answer.textContent = "Incorrect! The correct answer is: " + correctAnswer
+        }
+    }
 
 beginButton.addEventListener('click', startQuiz)
 // todo call questions based on index - first question would be question[0], then question[1], and so on.
