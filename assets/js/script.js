@@ -23,7 +23,7 @@ var beginButton = document.getElementById("beginButton")
 var answer = document.getElementById("answer")
 var endingQuiz = document.getElementById("endQuiz")
 var highscores = document.getElementById("highscores")
-var name = document.getElementById("name")
+var finalName = document.getElementById("finalName")
 var finalScore = document.getElementById("finalScore")
 var playAgain = document.getElementById("playAgain")
 var submitScore = document.getElementById("submitScore")
@@ -31,6 +31,7 @@ var userInitials = document.getElementById("userInitials")
 var result = document.getElementById("result")
 var playerInitials = document.getElementById("playerInitials")
 var user = document.getElementById("user")
+var timer = document.getElementById("timer")
 
 
 // hides initials, highscores, and play again button on initial page load
@@ -127,7 +128,7 @@ function startQuiz() {
                 answer.style.backgroundColor = "green"
                 setTimeout(function() {
                     displayQuestions() 
-                }, 600)
+                }, 900)
             }
         } else {
             answer.textContent = "Incorrect! The correct answer is: " + correctAnswer
@@ -136,7 +137,7 @@ function startQuiz() {
             questionsIndex++
             setTimeout(function() {
                 displayQuestions()
-            }, 600)
+            }, 900)
         }
     }
 
@@ -148,7 +149,7 @@ function startQuiz() {
         qTitle.style.display = "none"
         options.style.display = "none"
         answer.style.display = "none"
-
+        // timer.style.display = "none"
         // show end screen with initials input
         initials.style.display = "block"
         endingQuiz.style.display = "block"
@@ -161,9 +162,23 @@ function startQuiz() {
             result.style.display = "block"
 
             playerInitials.textContent = (`You are saving your initials as ${userInitials.value}`)
+
+            var name = userInitials.value
+
+            // setting items to local storage
+            localStorage.setItem('initials', name)
+            localStorage.setItem('highscore', time)
+            populateInitials()
         })
 
 
+    }
+    function populateInitials() {
+        console.log('in initials')
+        var enteredInitials = localStorage.getItem("initials");
+        finalName.textContent = enteredInitials;
+        var score = localStorage.getItem("highscore");
+        finalScore.textContent = score;
     }
 beginButton.addEventListener('click', startQuiz)
 // todo call questions based on index - first question would be question[0], then question[1], and so on.
