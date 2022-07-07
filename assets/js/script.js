@@ -10,26 +10,26 @@
 // * REFERENCE THIRD PARTY APIS #5 FOR QUESTION ANSWER OPTIONS
 // ---------------------------------------------------------------------
 
-var questionsContainer = document.getElementbyId("questions")
-var = document.getElementbyId("qTitle")
-var = document.getElementbyId("options")
-var = document.getElementbyId("optA")
-var = document.getElementbyId("optB")
-var = document.getElementbyId("optC")
-var = document.getElementbyId("optD")
-var = document.getElementbyId("seconds")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
-var = document.getElementbyId("")
+var questionsContainer = document.getElementById("questions")
+var qTitle = document.getElementById("qTitle")
+var options = document.getElementById("options")
+var optA = document.getElementById("optA")
+var optB = document.getElementById("optB")
+var optC = document.getElementById("optC")
+var optD = document.getElementById("optD")
+var seconds = document.getElementById("seconds")
+var begin = document.getElementById("begin")
+var beginButton = document.getElementById("beginButton")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
+// var = document.getElementById("")
 
 // * THEN a timer starts and I am presented with a question
 // ? Will need two functions - one for timer, one for presenting question
@@ -38,39 +38,85 @@ var = document.getElementbyId("")
 
 // todo create an array of objects for each question and the set of answers, and the correct answer
 
+// hides initials on initial page load
+initials.style.display = "none"
+
+// questions array of objects 
 var questionsContainer = [{
-    question = "Which of the following options contains both of the data types that JavaScripts accepts?",
-    optionA = "letter & string",
-    optionB = "thread & number",
-    optionC = "digit & string",
-    optionD = "string & number",
-    answer = "string & number"
+    question: "Which of the following options contains both of the data types that JavaScripts accepts?",
+    optionA: "letter & string",
+    optionB: "thread & number",
+    optionC: "digit & string",
+    optionD: "string & number",
+    answer: "string & number"
 },
 {
-    question = "What is another way of saying to call a function?",
-    optionA = "provoke",
-    optionB = "invoke",
-    optionC = "artichoke",
-    optionD = "baroque",
-    answer = "invoke"
+    question: "What is another way of saying to call a function?",
+    optionA: "provoke",
+    optionB: "invoke",
+    optionC: "artichoke",
+    optionD: "baroque",
+    answer: "invoke"
 },
 {
-    question = "What does DOM stand for?",
-    optionA = "Directory of Machines",
-    optionB = "Digitally Oriented Moms",
-    optionC = "Document Object Model",
-    optionD = "Developers on Mars",
-    answer = "Document Object Model"
+    question: "What does DOM stand for?",
+    optionA: "Directory of Machines",
+    optionB: "Digitally Oriented Moms",
+    optionC: "Document Object Model",
+    optionD: "Developers on Mars",
+    answer: "Document Object Model"
 },
 {
-    question = "How would you pull 'Sagittarius' from the following array? var signs = ['Sagittarius', 'Leo', 'Capricorn']",
-    optionA = "signs(1)",
-    optionB = "signs[1]",
-    optionC = "signs(0)",
-    optionD = "signs[0]",
-    answer = "signs[0]"
-}
-]
+    question: "How would you pull 'Sagittarius' from the following array? var signs = ['Sagittarius', 'Leo', 'Capricorn']",
+    optionA: "signs(1)",
+    optionB: "signs[1]",
+    optionC: "signs(0)",
+    optionD: "signs[0]",
+    answer: "signs[0]"
+}]
+
+
+var correctAnswers = 0;
+var incorrectAnswers = 0;
+var time = 60;
+var questionsContainerArr=0;
+
+function startQuiz() {
+    begin.style.display = "none"
+    beginButton.style.display = "none"
+    initials.style.display = "none"
+    console.log('hi')
+    var beginTimer = setInterval(function () {
+        incorrectAnswers++
+        time--;
+        seconds.textContent = time;
+        if (time < 0 || questionsContainerArr === questionsContainer.length - 1) {
+            clearInterval(beginTimer);
+            console.log("Correct " + correctAnswers)
+            console.log("Incorrect " + incorrectAnswers)
+            endQuiz()
+        }
+        //will lower the time by 1 sec
+        }, 1000);
+        displayQuestion()
+    }
+
+    //function  to display the current question based on the index of the arr
+    function displayQuestion() {
+        qTitle.textContent = questionsContainer[questionsContainerArr].question;
+        optA.textContent = questionsContainer[questionsContainerArr].optionA;
+        optB.textContent = questionsContainer[questionsContainerArr].optionB;
+        optC.textContent = questionsContainer[questionsContainerArr].optionC;
+        optD.textContent = questionsContainer[questionsContainerArr].optionD;
+
+        optionA.addEventListener('click', checkAnswerChoice)
+        optionB.addEventListener('click', checkAnswerChoice)
+        optionC.addEventListener('click', checkAnswerChoice)
+        optionD.addEventListener('click', checkAnswerChoice)
+    }
+
+
+beginButton.addEventListener('click', startQuiz)
 // todo call questions based on index - first question would be question[0], then question[1], and so on.
 // todo when question[0] is in a visible state, the remainder of the questions need to be in a hidden state, and vice versa for all questions
 
