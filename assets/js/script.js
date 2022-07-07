@@ -21,26 +21,22 @@ var seconds = document.getElementById("seconds")
 var begin = document.getElementById("begin")
 var beginButton = document.getElementById("beginButton")
 var answer = document.getElementById("answer")
-// var = document.getElementById("")
-// var = document.getElementById("")
-// var = document.getElementById("")
-// var = document.getElementById("")
-// var = document.getElementById("")
-// var = document.getElementById("")
-// var = document.getElementById("")
+var endingQuiz = document.getElementById("endQuiz")
+var highscores = document.getElementById("highscores")
+var name = document.getElementById("name")
+var finalScore = document.getElementById("finalScore")
+var playAgain = document.getElementById("playAgain")
+var submitScore = document.getElementById("submitScore")
+var userInitials = document.getElementById("userInitials")
 // var = document.getElementById("")
 // var = document.getElementById("")
 
-// * THEN a timer starts and I am presented with a question
-// ? Will need two functions - one for timer, one for presenting question
-// todo function for question
 
-
-// todo create an array of objects for each question and the set of answers, and the correct answer
-
-// hides initials on initial page load
+// hides initials, highscores, and play again button on initial page load
 initials.style.display = "none"
-
+endingQuiz.style.display = "none"
+highscores.style.display = "none"
+playAgain.style.display = "none"
 // questions array of objects 
 var questionsContainer = [{
     question: "Which of the following options contains both of the data types that JavaScripts accepts?",
@@ -79,7 +75,7 @@ var questionsContainer = [{
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var time = 60;
-var questionsContainerArr = 0;
+var questionsIndex = 0;
 
 function startQuiz() {
     begin.style.display = "none"
@@ -90,7 +86,7 @@ function startQuiz() {
         incorrectAnswers++
         time--;
         seconds.textContent = time;
-        if (time < 0 || questionsContainerArr === questionsContainer.length - 1) {
+        if (time < 0 || questionsIndex === questionsContainer.length - 1) {
             clearInterval(beginTimer);
             console.log("Correct " + correctAnswers)
             console.log("Incorrect " + incorrectAnswers)
@@ -103,11 +99,11 @@ function startQuiz() {
 
     //function  to display the current question based on the index of the arr
     function displayQuestions() {
-        qTitle.textContent = questionsContainer[questionsContainerArr].question;
-        optA.textContent = questionsContainer[questionsContainerArr].optionA;
-        optB.textContent = questionsContainer[questionsContainerArr].optionB;
-        optC.textContent = questionsContainer[questionsContainerArr].optionC;
-        optD.textContent = questionsContainer[questionsContainerArr].optionD;
+        qTitle.textContent = questionsContainer[questionsIndex].question;
+        optA.textContent = questionsContainer[questionsIndex].optionA;
+        optB.textContent = questionsContainer[questionsIndex].optionB;
+        optC.textContent = questionsContainer[questionsIndex].optionC;
+        optD.textContent = questionsContainer[questionsIndex].optionD;
 
         optA.addEventListener('click', checkAnswerChoice)
         optB.addEventListener('click', checkAnswerChoice)
@@ -116,16 +112,16 @@ function startQuiz() {
     }
     
     function checkAnswerChoice(event) {
-        var correctAnswer = questionsContainer[questionsContainerArr].answer
+        var correctAnswer = questionsContainer[questionsIndex].answer
         console.log(correctAnswer)
 
         if (event.target.textContent === correctAnswer) {
             correctAnswers += 1
             answer.textContent = "Correct!"
             answer.style.backgroundColor = "green"
-            questionsContainerArr++
+            questionsIndex++
 
-            if (questionsContainerArr < questionsContainer.length) {
+            if (questionsIndex < questionsContainer.length) {
                 answer.textContent = "Correct!"
                 answer.style.backgroundColor = "green"
                 setTimeout(function() {
@@ -136,13 +132,35 @@ function startQuiz() {
             answer.textContent = "Incorrect! The correct answer is: " + correctAnswer
             answer.style.backgroundColor = "lightblue"
             time -= 10
-            questionsContainerArr++
+            questionsIndex++
             setTimeout(function() {
                 displayQuestions()
             }, 600)
         }
     }
 
+    function endQuiz() {
+        console.log("END")
+    
+        // hide question
+        // questionsContainer.style.display = "none"
+        qTitle.style.display = "none"
+        options.style.display = "none"
+        answer.style.display = "none"
+
+        // show end screen with initials input
+        initials.style.display = "block"
+        endingQuiz.style.display = "block"
+        highscores.style.display = "block"
+        playAgain.style.display = "block"
+
+        submitScore.addEventListener('click', function submitHighscore() {
+            console.log('submit button clicked')
+
+        })
+
+
+    }
 beginButton.addEventListener('click', startQuiz)
 // todo call questions based on index - first question would be question[0], then question[1], and so on.
 // todo when question[0] is in a visible state, the remainder of the questions need to be in a hidden state, and vice versa for all questions

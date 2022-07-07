@@ -13,8 +13,7 @@
     </div>
 
     <!-- todo container -->
-    <div>
-        
+    <div class="container">
         <!-- ! todo begin quiz screen instructions etc -->
         <div id="begin">
             <h1>Instructions:</h1>
@@ -24,7 +23,6 @@
             </button>
         </div>
 
-        <!-- ! todo questions (does not need html text)-->
         <div>
             <!-- * question title -->
             <h1 id="qTitle"></h1>
@@ -39,16 +37,31 @@
             <div id="answer"></div>
             
         </div>
-        <!-- ! todo initials -->
-        <div id="initials">
-            Enter your initials:
-        </div>
-           
-
+        <div id="endQuiz">
+            <h2>Congrats! You have completed the coding quiz!</h2>
+            <h3 id="initials">
+                Enter your initials:
+                <input type="text" name="initials" id="userInitials">
+            </h3>
+            <button id="submitScore">Submit</button>
+            <div id="result"></div>
+            <div id="playerInitials">
+                <span id="user"></span>
+            </div>
+        </div>   
     </div>    
         
-        
-    <!-- todo highscores -->
+       <div>
+           <h1 id="highscores">Highscores</h1>
+           <p id="name"></p>
+           <p id="finalScore"></p>
+           <button id="playAgain">
+               <a href="index.html">
+                   Play Again!
+               </a>
+           </button>
+       </div> 
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
