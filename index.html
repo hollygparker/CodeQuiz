@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
     <!-- todo timer div "time left:" > span (contains number 0) span needs ID, maybe "seconds" - it's a timer that's counting down seconds, class = timer  -->
-    <div class="timer">Time left:
+    <div id="timer">Time left:
         <span id="seconds">0</span>
     </div>
 
@@ -23,7 +24,7 @@
             </button>
         </div>
 
-        <div>
+        <div id="questionStyling">
             <!-- * question title -->
             <h1 id="qTitle"></h1>
             <!-- ? answer choices ABCD -->
@@ -51,7 +52,7 @@
         </div>   
     </div>    
         
-       <div>
+       <div class="container">
            <h1 id="highscores">Highscores</h1>
            <p id="finalName"></p>
            <p id="finalScore"></p>

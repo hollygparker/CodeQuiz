@@ -1,15 +1,3 @@
-// todo remember to use strings
-// * hiding elements and showing elements
-// todo hide previous, show next
-// todo use local storage for saving the score 
-// ! score is building up the whole time 
-// * time decreases when answer is incorrect
-// * correct or incorrect displays when a user clicks 
-// * REFERENCE WEB APIS 26 LOCAL STORAGE TO DOS FOR QUESTIONS
-// * REFERENCE WEB APIS 9 AND 10 TIMERS INTERVALS FOR TIMER FUNCTION
-// * REFERENCE THIRD PARTY APIS #5 FOR QUESTION ANSWER OPTIONS
-// ---------------------------------------------------------------------
-
 var questionsContainer = document.getElementById("questions")
 var qTitle = document.getElementById("qTitle")
 var options = document.getElementById("options")
@@ -99,7 +87,7 @@ function startQuiz() {
         displayQuestions()
     }
 
-    //function  to display the current question based on the index of the arr
+    //function  to display the current question based on the index of the array
     function displayQuestions() {
         qTitle.textContent = questionsContainer[questionsIndex].question;
         optA.textContent = questionsContainer[questionsIndex].optionA;
@@ -113,6 +101,7 @@ function startQuiz() {
         optD.addEventListener('click', checkAnswerChoice)
     }
     
+    // function that checks if answer is correct
     function checkAnswerChoice(event) {
         var correctAnswer = questionsContainer[questionsIndex].answer
         console.log(correctAnswer)
@@ -149,7 +138,7 @@ function startQuiz() {
         qTitle.style.display = "none"
         options.style.display = "none"
         answer.style.display = "none"
-        // timer.style.display = "none"
+        timer.style.display = "none"
         // show end screen with initials input
         initials.style.display = "block"
         endingQuiz.style.display = "block"
