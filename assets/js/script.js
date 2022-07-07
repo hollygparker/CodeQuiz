@@ -28,8 +28,9 @@ var finalScore = document.getElementById("finalScore")
 var playAgain = document.getElementById("playAgain")
 var submitScore = document.getElementById("submitScore")
 var userInitials = document.getElementById("userInitials")
-// var = document.getElementById("")
-// var = document.getElementById("")
+var result = document.getElementById("result")
+var playerInitials = document.getElementById("playerInitials")
+var user = document.getElementById("user")
 
 
 // hides initials, highscores, and play again button on initial page load
@@ -156,7 +157,10 @@ function startQuiz() {
 
         submitScore.addEventListener('click', function submitHighscore() {
             console.log('submit button clicked')
+            result.textContent = (`Your final score is ${time}`)
+            result.style.display = "block"
 
+            playerInitials.textContent = (`You are saving your initials as ${userInitials.value}`)
         })
 
 
