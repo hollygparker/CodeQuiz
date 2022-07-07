@@ -20,6 +20,7 @@ var result = document.getElementById("result")
 var playerInitials = document.getElementById("playerInitials")
 var user = document.getElementById("user")
 var timer = document.getElementById("timer")
+var questionStyling = document.getElementById("questionStyling")
 
 
 // hides initials, highscores, and play again button on initial page load
@@ -27,6 +28,7 @@ initials.style.display = "none"
 endingQuiz.style.display = "none"
 highscores.style.display = "none"
 playAgain.style.display = "none"
+questionStyling.style.display = "none"
 // questions array of objects 
 var questionsContainer = [{
     question: "Which of the following options contains both of the data types that JavaScripts accepts?",
@@ -71,6 +73,7 @@ function startQuiz() {
     begin.style.display = "none"
     beginButton.style.display = "none"
     initials.style.display = "none"
+    questionStyling.style.display = "block"
     console.log('hi')
     var beginTimer = setInterval(function () {
         incorrectAnswers++
