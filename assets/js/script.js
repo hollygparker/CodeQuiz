@@ -98,11 +98,11 @@ function startQuiz() {
         }
         //will lower the time by 1 sec
         }, 1000);
-        displayQuestion()
+        displayQuestions()
     }
 
     //function  to display the current question based on the index of the arr
-    function displayQuestion() {
+    function displayQuestions() {
         qTitle.textContent = questionsContainer[questionsContainerArr].question;
         optA.textContent = questionsContainer[questionsContainerArr].optionA;
         optB.textContent = questionsContainer[questionsContainerArr].optionB;
