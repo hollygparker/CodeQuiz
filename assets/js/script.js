@@ -79,7 +79,7 @@ var questionsContainer = [{
 var correctAnswers = 0;
 var incorrectAnswers = 0;
 var time = 60;
-var questionsContainerArr=0;
+var questionsContainerArr = 0;
 
 function startQuiz() {
     begin.style.display = "none"
@@ -116,12 +116,30 @@ function startQuiz() {
     }
     
     function checkAnswerChoice(event) {
-        var correctAnswer = [questionsContainerArr].answer
+        var correctAnswer = questionsContainer[questionsContainerArr].answer
         console.log(correctAnswer)
+
         if (event.target.textContent === correctAnswer) {
+            correctAnswers += 1
             answer.textContent = "Correct!"
+            answer.style.backgroundColor = "green"
+            questionsContainerArr++
+
+            if (questionsContainerArr < questionsContainer.length) {
+                answer.textContent = "Correct!"
+                answer.style.backgroundColor = "green"
+                setTimeout(function() {
+                    displayQuestions() 
+                }, 600)
+            }
         } else {
             answer.textContent = "Incorrect! The correct answer is: " + correctAnswer
+            answer.style.backgroundColor = "lightblue"
+            time -= 10
+            questionsContainerArr++
+            setTimeout(function() {
+                displayQuestions()
+            }, 600)
         }
     }
 
