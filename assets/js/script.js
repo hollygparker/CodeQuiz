@@ -154,6 +154,7 @@ function checkAnswerChoice(event) {
   }
 }
 
+// function to end the quiz and display higscores
 function endQuiz() {
   console.log("END");
 
@@ -184,8 +185,8 @@ function endQuiz() {
     populateInitials();
   });
 }
-// finalScore.style.display = "none"
-// finalName.style.display = "none"
+
+// local storage to get initals and score
 function populateInitials() {
   console.log("in initials");
   var enteredInitials = localStorage.getItem("initials");
@@ -193,26 +194,7 @@ function populateInitials() {
   var score = localStorage.getItem("highscore");
   finalScore.textContent = score;
 }
+// starting the quiz based off of a click
 beginButton.addEventListener("click", startQuiz);
-// todo call questions based on index - first question would be question[0], then question[1], and so on.
-// todo when question[0] is in a visible state, the remainder of the questions need to be in a hidden state, and vice versa for all questions
 
-// * WHEN I answer a question
-// todo add event listener for click on question options
-// * THEN I am presented with another question
-// * WHEN I answer a question incorrectly
-// * THEN time is subtracted from the clock
-// todo timer function if !correct > clock time - subtract seconds
-// todo ELSE store a score point to local storage using localStorage.setItem
-// ? the question function and timer function will need to interact with each other
-// * WHEN all questions are answered or the timer reaches 0
-// ? again, functions will be interacting with each other
-// todo WHEN all questions are answered - when question array has been gone through
-// ! OR
-// todo the timer reaches 0
-// * THEN the game is over
-// * WHEN the game is over
-// * THEN I can save my initials and my score
-// todo game over > populate box to enter initials
-// todo get score from local storage using localStorage.getItem()
-// todo may need to use JSON parse method
+
