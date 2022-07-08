@@ -165,8 +165,8 @@ function startQuiz() {
 
 
     }
-    finalScore.style.display = "none"
-    finalName.style.display = "none"
+    // finalScore.style.display = "none"
+    // finalName.style.display = "none"
     function populateInitials() {
         console.log('in initials')
         var enteredInitials = localStorage.getItem("initials");

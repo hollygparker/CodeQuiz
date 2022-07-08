@@ -12,33 +12,6 @@ body {
     font-size: 20px;
 }
 
-/* #options {
-    border: 1px black solid;
-} */
-
-/* #optA {
-    border: 1px black solid;
-    display: flex;
-    justify-content: center;
-}
-
-#optB {
-    border: 1px black solid;
-    display: flex;
-    justify-content: center;
-}
-
-#optC {
-    border: 1px black solid;
-    display: flex;
-    justify-content: center;
-}
-
-#optD {
-    border: 1px black solid;
-    display: flex;
-    justify-content: center;
-} */
 
 #questionStyling {
     text-align: center;
@@ -78,4 +51,22 @@ body {
     background-color: lightyellow;
     position: relative;
     border-radius: 10px;
+  }
+#finalName{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+#finalScore {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+  #playAgain {
+      display: flex;
+      background-color: bisque;
+      font-size: medium;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: 12px;
   }
