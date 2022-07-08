@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Code Quiz</title>
 </head>
 <body>
-    <!-- todo timer div "time left:" > span (contains number 0) span needs ID, maybe "seconds" - it's a timer that's counting down seconds, class = timer  -->
+<!-- timer -->
     <div id="timer">Time left:
         <span id="seconds">0</span>
     </div>
 
-    <!-- todo container -->
+
     <div class="container">
-        <!-- ! todo begin quiz screen instructions etc -->
+        <!-- start screen -->
         <div id="begin">
             <h1>Instructions:</h1>
             <h2>Select the correct answer from the following options.</h2>
@@ -23,7 +23,7 @@
                 Begin Quiz
             </button>
         </div>
-
+<!-- questions will be populated with js -->
         <div id="questionStyling">
             <!-- * question title -->
             <h1 id="qTitle"></h1>
@@ -38,6 +38,7 @@
             <div id="answer"></div>
             
         </div>
+        <!-- ending quiz -->
         <div id="endQuiz">
             <h2>Congrats! You have completed the coding quiz!</h2>
             <h3 id="initials">
@@ -51,9 +52,10 @@
             </div>
         </div>   
     </div>    
-        
+        <!-- highscore -->
        <div class="container">
            <h1 id="highscores">Highscores</h1>
+
        </div> 
        <div>
        <h2 id="finalName" style="margin-top: 18px;"></h2>
